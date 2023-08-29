@@ -16,20 +16,15 @@ class Home extends StatelessWidget {
                 fontFamily: AutofillHints.nickname,
                 fontWeight: FontWeight.bold),
           ),
-           IllustrationFb1(),
+          IllustrationFb1(),
           IllustrationFb4(),
           IllustrationFb2(),
           IllustrationFb3(),
-          
-          
-          
         ],
       ),
     );
   }
 }
-
-
 
 class IllustrationFb4 extends StatelessWidget {
   const IllustrationFb4({Key? key}) : super(key: key);
@@ -39,17 +34,16 @@ class IllustrationFb4 extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Container(
-       
-        child:  Stack(
+        child: Stack(
           children: [
-            
-           Image.asset('../../../../assets/images/organico.png'),
+            Image.asset('../../../../assets/images/organico.png'),
           ],
         ),
       ),
     );
   }
 }
+
 class IllustrationFb3 extends StatelessWidget {
   const IllustrationFb3({Key? key}) : super(key: key);
 
@@ -58,17 +52,16 @@ class IllustrationFb3 extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Container(
-        
         child: Stack(
           children: [
-            Image.asset('../../../../assets/images/organico.png'),
-            
+            Image.asset('../../../../assets/images/TECNOLOGICO1.png'),
           ],
         ),
       ),
     );
   }
 }
+
 class IllustrationFb2 extends StatelessWidget {
   const IllustrationFb2({Key? key}) : super(key: key);
 
@@ -77,17 +70,16 @@ class IllustrationFb2 extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Container(
-       
         child: Stack(
           children: [
-           Image.asset('../../../../assets/images/organico.png'),
-            
+            Image.asset('../../../../assets/images/PELIGROSO1.png'),
           ],
         ),
       ),
     );
   }
 }
+
 class IllustrationFb1 extends StatelessWidget {
   const IllustrationFb1({Key? key}) : super(key: key);
 
@@ -96,19 +88,9 @@ class IllustrationFb1 extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Container(
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.4),
-              blurRadius: 10,
-              spreadRadius: 4,
-            ),
-          ],
-        ),
         child: Stack(
           children: [
-            Image.asset('../../../../assets/images/organico.png'),
-           
+            Image.asset('../../../../assets/images/INORGANICO1.png'),
           ],
         ),
       ),
