@@ -13,6 +13,12 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.green,
+          appBarTheme: const AppBarTheme(
+           
+            backgroundColor: Colors.green,
+            titleTextStyle: TextStyle(color: Colors.white),
+            
+          ),
         ),
         home: const  HomeScreen());
   }

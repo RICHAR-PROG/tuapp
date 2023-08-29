@@ -1,4 +1,5 @@
 import 'package:bioallin/presentation/widgets/home/home.dart';
+import 'package:bioallin/presentation/widgets/views/perfil.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,19 +9,21 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Padding(
-          padding: EdgeInsets.all(2.0),
-          child: CircleAvatar(
-            backgroundImage: NetworkImage(
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNlYc4hgIWCe8l-JD3V-39xTRk9YHYBd4mzDzoyP4rv47uZA_FZh6YcRKq_E63jU446I0&usqp=CAU"),
-          ),
-        ),
-        title: const Text("Welcome to Bioallin"),
-        centerTitle: false,
+        // leading: const Padding(
+        //   padding: EdgeInsets.all(2.0),
+        //   child: CircleAvatar(
+        //     backgroundImage: NetworkImage(
+        //         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNlYc4hgIWCe8l-JD3V-39xTRk9YHYBd4mzDzoyP4rv47uZA_FZh6YcRKq_E63jU446I0&usqp=CAU"),
+        //   ),
+        // ),
+        title: const Text("Welcome to Bioallin",style: TextStyle(
+          fontSize: 20
+        ),),
+        centerTitle: true ,
       ),
       // ignore: prefer_const_constructors
       body: SingleChildScrollView(
-        child: const CustomPaint(
+        child:  const CustomPaint(
           // painter: BottomNavCurvePainter(),
           child: Home(),
         ),
@@ -35,30 +38,13 @@ class BottomNavBarRaisedInsetFb1 extends StatefulWidget {
   const BottomNavBarRaisedInsetFb1({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _BottomNavBarRaisedInsetFb1State createState() =>
       _BottomNavBarRaisedInsetFb1State();
 }
 
 class _BottomNavBarRaisedInsetFb1State
     extends State<BottomNavBarRaisedInsetFb1> {
-  //- - - - - - - - - instructions - - - - - - - - - - - - - - - - - -
-  // WARNING! MUST ADD extendBody: true; TO CONTAINING SCAFFOLD
-  //
-  // Instructions:
-  //
-  // add this widget to the bottomNavigationBar property of a Scaffold, along with
-  // setting the extendBody parameter to true i.e:
-  //
-  // Scaffold(
-  //  extendBody: true,
-  //  bottomNavigationBar: BottomNavBarRaisedInsetFb1()
-  // )
-  //
-  // Properties such as color and height can be set by changing the properties at the top of the build method
-  //
-  // For help implementing this in a real app, watch https://www.youtube.com/watch?v=C0_3w0kd0nc. The style is different, but connecting it to navigation is the same.
-  //
-  //- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - -
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +61,6 @@ class _BottomNavBarRaisedInsetFb1State
 
     return BottomAppBar(
       color: Colors.green,
-      elevation: 0,
       child: Stack(
         children: [
           CustomPaint(
@@ -89,9 +74,9 @@ class _BottomNavBarRaisedInsetFb1State
             heightFactor: 0.6,
             child: FloatingActionButton(
                 backgroundColor: primaryColor,
-                child: const Icon(Icons.shopping_basket),
                 elevation: 0.1,
-                onPressed: () {}),
+                onPressed: () {},
+                child: const Icon(Icons.delete)),
           ),
           SizedBox(
             height: height,
@@ -108,7 +93,7 @@ class _BottomNavBarRaisedInsetFb1State
                 ),
                 NavBarIcon(
                   text: "Search",
-                  icon: Icons.search_outlined,
+                  icon: Icons.book,
                   selected: false,
                   onPressed: () {},
                   defaultColor: secondaryColor,
@@ -117,16 +102,21 @@ class _BottomNavBarRaisedInsetFb1State
                 const SizedBox(width: 56),
                 NavBarIcon(
                     text: "Cart",
-                    icon: Icons.local_grocery_store_outlined,
+                    icon: Icons.history,
                     selected: false,
                     onPressed: () {},
                     defaultColor: secondaryColor,
                     selectedColor: primaryColor),
                 NavBarIcon(
                   text: "Calendar",
-                  icon: Icons.date_range_outlined,
+                  icon: Icons.person,
                   selected: false,
-                  onPressed: () {},
+                  onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => UserProfile()),
+                  );
+                },
                   selectedColor: primaryColor,
                   defaultColor: secondaryColor,
                 )
@@ -205,8 +195,8 @@ class NavBarIcon extends StatelessWidget {
       children: [
         IconButton(
           onPressed: onPressed,
-          splashColor: Colors.transparent,
-          highlightColor: Colors.transparent,
+          splashColor: Colors.black,
+          highlightColor: Colors.black,
           icon: Icon(
             icon,
             size: 25,
@@ -217,3 +207,6 @@ class NavBarIcon extends StatelessWidget {
     );
   }
 }
+
+
+
