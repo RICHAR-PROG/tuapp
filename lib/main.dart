@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:bioallin/presentation/screens/home_screen.dart';
+import 'package:bioallin/presentation/widgets/views/perfil.dart';
 
 void main() => runApp(const MyApp());
 
@@ -11,18 +11,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Material App',
         debugShowCheckedModeBanner: false,
-        
-         theme: ThemeData(
-        useMaterial3: true,
-        colorSchemeSeed: Colors.green,
-         appBarTheme: const AppBarTheme(
-           
+        theme: ThemeData(
+          useMaterial3: true,
+          colorSchemeSeed: Colors.green,
+          appBarTheme: const AppBarTheme(
             backgroundColor: Color.fromARGB(255, 85, 212, 89),
             titleTextStyle: TextStyle(color: Colors.white),
             
-            
           ),
-      ),
-        home: const  HomeScreen());
+        ),
+        home: const UserProfile());
   }
 }

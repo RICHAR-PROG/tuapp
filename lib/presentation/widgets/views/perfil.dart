@@ -19,9 +19,13 @@ class UserProfile extends StatelessWidget {
           children: [
             const CircleAvatar(
               radius: 80,
+<<<<<<< HEAD
               backgroundImage: AssetImage(
                 'assets/images/user.jpg',
               ),
+=======
+              child: Image(image: AssetImage('assets/images/user.jpg')),
+>>>>>>> 3727543edacd5945fac8acd10b8f967f76608585
             ),
             const SizedBox(height: 16),
             const Text(
@@ -62,6 +66,7 @@ class UserProfile extends StatelessWidget {
     );
   }
 }
+<<<<<<< HEAD
 
 class CommentItem extends StatelessWidget {
   const CommentItem(
@@ -152,3 +157,5 @@ class _LikeButtonState extends State<LikeButton> {
     ));
   }
 }
+=======
+>>>>>>> 3727543edacd5945fac8acd10b8f967f76608585

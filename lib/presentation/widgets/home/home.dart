@@ -39,7 +39,11 @@ class IllustrationFb4 extends StatelessWidget {
       padding: const EdgeInsets.all(10.0),
       child: Stack(
         children: [
+<<<<<<< HEAD
           Image.asset('assets/images/organico.png'),
+=======
+          Image.asset('/assets/images/organico.png'),
+>>>>>>> 3727543edacd5945fac8acd10b8f967f76608585
         ],
       ),
     );
