@@ -1,7 +1,6 @@
 import 'package:bioallin/presentation/screens/options.dart';
 import 'package:flutter/material.dart';
 
-
 class UserProfile extends StatelessWidget {
   const UserProfile({Key? key}) : super(key: key);
 
@@ -22,9 +21,7 @@ class UserProfile extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 80,
-              backgroundImage: AssetImage(
-                '../../../../assets/images/user.jpg',
-              ),
+              child: Image(image: AssetImage('assets/images/user.jpg')),
             ),
             SizedBox(height: 16),
             Text(
