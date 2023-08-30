@@ -21,7 +21,7 @@ class HistoryScreen extends StatelessWidget {
           child:History(),
         ),
       ),
-      bottomNavigationBar: const BottomNavBarRaisedInsetFb1(),
+      bottomNavigationBar: const BottomNavBarCurvedFb1(),
       // bottomNavigationBar: const BottomNavBarCurvedFb1(),
     );
   }

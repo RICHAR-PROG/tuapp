@@ -23,7 +23,7 @@ class UserProfile extends StatelessWidget {
             CircleAvatar(
               radius: 80,
               backgroundImage: AssetImage(
-                'assets/images/organico.png',
+                '../../../../assets/images/user.jpg',
               ),
             ),
             SizedBox(height: 16),
@@ -51,7 +51,7 @@ class UserProfile extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const BottomNavBarRaisedInsetFb1(),
+      bottomNavigationBar: const BottomNavBarCurvedFb1(),
     );
   }
 }

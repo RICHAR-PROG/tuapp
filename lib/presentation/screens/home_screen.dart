@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
           child: Home(),
         ),
       ),
-      bottomNavigationBar: const BottomNavBarRaisedInsetFb1(),
+      bottomNavigationBar: const BottomNavBarCurvedFb1(),
       // bottomNavigationBar: const BottomNavBarCurvedFb1(),
     );
   }

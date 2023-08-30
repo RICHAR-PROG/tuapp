@@ -11,15 +11,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Material App',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.green,
-          appBarTheme: const AppBarTheme(
+        
+         theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Colors.green,
+         appBarTheme: const AppBarTheme(
            
-            backgroundColor: Colors.green,
+            backgroundColor: Color.fromARGB(255, 85, 212, 89),
             titleTextStyle: TextStyle(color: Colors.white),
             
           ),
-        ),
+      ),
         home: const  HomeScreen());
   }
 }

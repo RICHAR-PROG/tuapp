@@ -33,12 +33,10 @@ class IllustrationFb4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
-      child: Container(
-        child: Stack(
-          children: [
-            Image.asset('../../../../assets/images/organico.png'),
-          ],
-        ),
+      child: Stack(
+        children: [
+          Image.asset('../../../../assets/images/organico.png'),
+        ],
       ),
     );
   }
@@ -51,12 +49,10 @@ class IllustrationFb3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
-      child: Container(
-        child: Stack(
-          children: [
-            Image.asset('../../../../assets/images/TECNOLOGICO1.png'),
-          ],
-        ),
+      child: Stack(
+        children: [
+          Image.asset('../../../../assets/images/TECNOLOGICO1.png'),
+        ],
       ),
     );
   }
@@ -69,12 +65,10 @@ class IllustrationFb2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
-      child: Container(
-        child: Stack(
-          children: [
-            Image.asset('../../../../assets/images/PELIGROSO1.png'),
-          ],
-        ),
+      child: Stack(
+        children: [
+          Image.asset('../../../../assets/images/PELIGROSO1.png'),
+        ],
       ),
     );
   }
@@ -87,12 +81,10 @@ class IllustrationFb1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
-      child: Container(
-        child: Stack(
-          children: [
-            Image.asset('../../../../assets/images/INORGANICO1.png'),
-          ],
-        ),
+      child: Stack(
+        children: [
+          Image.asset('../../../../assets/images/INORGANICO1.png'),
+        ],
       ),
     );
   }
