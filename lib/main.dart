@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
           appBarTheme: const AppBarTheme(
             backgroundColor: Color.fromARGB(255, 85, 212, 89),
             titleTextStyle: TextStyle(color: Colors.white),
+            
           ),
         ),
         home: const UserProfile());
