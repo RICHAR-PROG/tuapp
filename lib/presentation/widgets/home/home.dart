@@ -6,8 +6,11 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
+      
       child: Column(
+        
         children: [
+          
           Text(
             "Tipos de residuos",
             style: TextStyle(
@@ -16,6 +19,7 @@ class Home extends StatelessWidget {
                 fontFamily: AutofillHints.nickname,
                 fontWeight: FontWeight.bold),
           ),
+          
           IllustrationFb1(),
           IllustrationFb4(),
           IllustrationFb2(),

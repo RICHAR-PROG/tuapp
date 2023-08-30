@@ -23,10 +23,13 @@ class HomeScreen extends StatelessWidget {
       ),
       // ignore: prefer_const_constructors
       body: SingleChildScrollView(
+        
         child:  const CustomPaint(
           // painter: BottomNavCurvePainter(),
           child: Home(),
+          
         ),
+        
       ),
       bottomNavigationBar: const BottomNavBarCurvedFb1(),
       // bottomNavigationBar: const BottomNavBarCurvedFb1(),

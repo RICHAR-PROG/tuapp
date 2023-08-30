@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: Color.fromARGB(255, 85, 212, 89),
             titleTextStyle: TextStyle(color: Colors.white),
             
+            
           ),
       ),
         home: const  HomeScreen());
