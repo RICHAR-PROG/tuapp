@@ -7,6 +7,6 @@ class History extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset('organico.png');
+    return Image.asset('assets/images/organico.png');
   }
 }

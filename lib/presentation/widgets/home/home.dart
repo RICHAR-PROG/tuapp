@@ -39,7 +39,7 @@ class IllustrationFb4 extends StatelessWidget {
       padding: const EdgeInsets.all(10.0),
       child: Stack(
         children: [
-          Image.asset('../../../../assets/images/organico.png'),
+          Image.asset('assets/images/organico.png'),
         ],
       ),
     );
@@ -55,7 +55,7 @@ class IllustrationFb3 extends StatelessWidget {
       padding: const EdgeInsets.all(10.0),
       child: Stack(
         children: [
-          Image.asset('../../../../assets/images/TECNOLOGICO1.png'),
+          Image.asset('assets/images/TECNOLOGICO1.png'),
         ],
       ),
     );
@@ -71,7 +71,7 @@ class IllustrationFb2 extends StatelessWidget {
       padding: const EdgeInsets.all(10.0),
       child: Stack(
         children: [
-          Image.asset('../../../../assets/images/PELIGROSO1.png'),
+          Image.asset('assets/images/PELIGROSO1.png'),
         ],
       ),
     );
@@ -87,7 +87,7 @@ class IllustrationFb1 extends StatelessWidget {
       padding: const EdgeInsets.all(10.0),
       child: Stack(
         children: [
-          Image.asset('../../../../assets/images/INORGANICO1.png'),
+          Image.asset('assets/images/INORGANICO1.png'),
         ],
       ),
     );

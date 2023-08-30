@@ -1,6 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:bioallin/presentation/screens/history_screen.dart';
+import 'package:bioallin/presentation/screens/perfil_screen.dart';
 import 'package:bioallin/presentation/widgets/views/perfil.dart';
 import 'package:flutter/material.dart';
 
@@ -191,6 +192,7 @@ class BottomNavBarCurvedFb1 extends StatefulWidget {
 }
 
 class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
+   bool _perfilSelected = false;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -200,6 +202,7 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
     const secondaryColor = Colors.black54;
     // const  accentColor = const Color(0xffffffff);
     const backgroundColor = Colors.white;
+    
 
     return BottomAppBar(
       color: Colors.transparent,
@@ -226,7 +229,7 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                 NavBarIcon(
                   text: "Home",
                   icon: Icons.home_outlined,
-                  selected: true,
+                  selected: _perfilSelected,
                   onPressed: () {},
                   defaultColor: secondaryColor,
                   selectedColor: primaryColor,
@@ -234,8 +237,11 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                 NavBarIcon(
                   text: "Search",
                   icon: Icons.book,
-                  selected: false,
-                  onPressed: () {},
+                   selected: _perfilSelected,
+                  onPressed: () {
+                    
+                  },
+                  
                   defaultColor: secondaryColor,
                   selectedColor: primaryColor,
                 ),
@@ -243,7 +249,7 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                 NavBarIcon(
                     text: "History",
                     icon: Icons.history,
-                    selected: false,
+                    selected: _perfilSelected,
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -256,13 +262,18 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                 NavBarIcon(
                   text: "Perfil",
                   icon: Icons.person,
-                  selected: false,
+                  selected: _perfilSelected,
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const UserProfile()),
-                    );
+                    setState(() {
+                      _perfilSelected = !_perfilSelected;
+                    });
+
+                    if (_perfilSelected) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const PerfilScreen()),
+                      );
+                    }
                   },
                   selectedColor: primaryColor,
                   defaultColor: secondaryColor,
