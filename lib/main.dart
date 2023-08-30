@@ -1,6 +1,5 @@
 import 'package:bioallin/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:bioallin/presentation/widgets/views/perfil.dart';
 
 void main() => runApp(const MyApp());
 
