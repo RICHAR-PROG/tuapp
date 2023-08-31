@@ -9,6 +9,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         // leading: const Padding(
         //   padding: EdgeInsets.all(2.0),
         //   child: CircleAvatar(
