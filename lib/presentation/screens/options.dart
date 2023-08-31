@@ -219,7 +219,7 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                 backgroundColor: primaryColor,
                 elevation: 0.1,
                 onPressed: () {},
-                child: const Icon(Icons.delete)),
+                child: const Icon(Icons.delete_forever_rounded)),
           ),
           SizedBox(
             height: height,
