@@ -117,7 +117,7 @@ class InfoCard extends StatelessWidget {
                   onTap: onMoreTap,
                   child: const Center(
                       child: Text(
-                    "30/08/2023",
+                    "30/08/23",
                     style: TextStyle(color: Colors.green),
                   )),
                 ),
