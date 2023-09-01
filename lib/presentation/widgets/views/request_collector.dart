@@ -1,8 +1,6 @@
-// ignore: avoid_web_libraries_in_flutter
-// import 'dart:js';
+
 
 import 'package:flutter/material.dart';
-import 'package:bioallin/presentation/screens/map_screen.dart';
 
 class Request extends StatelessWidget {
   const Request({super.key});
@@ -79,83 +77,3 @@ class NavBarIcon extends StatelessWidget {
     throw UnimplementedError();
   }
 }
-// class Personalizar extends StatelessWidget {
-//   const Personalizar({Key? key}) : super(key: key);
-//   final primaryColor = const Color(0xff4338CA);
-//   final accentColor = const Color(0xffffffff);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Dialog(
-//       elevation: 1,
-//       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-//       child: Container(
-//         width: MediaQuery.of(context).size.width / 5,
-//         height: MediaQuery.of(context).size.height / 9,
-//         decoration: BoxDecoration(
-//             border: Border.all(
-//               color: const Color.fromARGB(255, 136, 236, 140),
-//               width: 0.5,
-//             ),
-//             color: Colors.white,
-//             borderRadius: BorderRadius.circular(5.0),
-//             boxShadow: [
-//               BoxShadow(
-//                   offset: const Offset(12, 26),
-//                   blurRadius: 50,
-//                   spreadRadius: 0,
-//                   color: Colors.grey.withOpacity(.2)),
-//             ]),
-//         // ignore: prefer_const_constructors
-//         child: Padding(
-//           padding: const EdgeInsets.all(8.0),
-//           child: const Column(
-//             crossAxisAlignment: CrossAxisAlignment.start,
-//             // mainAxisAlignment: MainAxisAlignment.center,
-//             children: [
-//               SizedBox(
-//                 height: 5,
-//               ),
-//               Text(
-//                 "Perzonalizar:",
-//                 style: TextStyle(fontWeight: FontWeight.bold),
-//               ),
-//               SizedBox(
-//                 height: 15,
-//               ),
-//               Row(
-//                 children: [
-//                   Icon(
-//                     Icons.show_chart,
-//                     color: Colors.black,
-//                     size: 14,
-//                   ),
-//                   SizedBox(
-//                     width: 10,
-//                   ),
-//                   Text(
-//                     "Tema",
-//                     style: TextStyle(
-//                       fontSize: 14,
-//                       color: Colors.black,
-//                     ),
-//                   ),
-//                   SizedBox(
-//                     width: 60,
-//                   ),
-//                   Text(
-//                     "change",
-//                     style: TextStyle(
-//                       color: Colors.blue,
-//                       fontFamily: AutofillHints.url,
-//                     ),
-//                   )
-//                 ],
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }

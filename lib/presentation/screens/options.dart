@@ -2,7 +2,7 @@
 
 import 'package:bioallin/presentation/screens/history_screen.dart';
 import 'package:bioallin/presentation/screens/home_screen.dart';
-import 'package:bioallin/presentation/screens/info_screen.dart';
+import 'package:bioallin/presentation/screens/map_screen.dart';
 import 'package:bioallin/presentation/screens/perfil_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -202,12 +202,7 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
     const primaryColor = Color.fromARGB(255, 85, 212, 89);
     const secondaryColor = Colors.black54;
     // const  accentColor = const Color(0xffffffff);
-<<<<<<< HEAD
-    const backgroundColor = Color(0xFFE8EBF0);
-    
-=======
     const backgroundColor = Colors.white;
->>>>>>> c45748ef90345872a3a5bed47a5425222ad5efc6
 
     return BottomAppBar(
       color: Colors.transparent,
@@ -223,7 +218,12 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
             child: FloatingActionButton(
                 backgroundColor: primaryColor,
                 elevation: 0.1,
-                onPressed: () {},
+                onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const MapScreen()),
+                      );
+                  },
                 child: const Icon(Icons.delete_forever_rounded)),
                 
           ),

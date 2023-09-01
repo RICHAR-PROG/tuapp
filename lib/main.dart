@@ -1,4 +1,5 @@
 // import 'package:bioallin/presentation/screens/home_screen.dart';
+import 'package:bioallin/presentation/screens/home_screen.dart';
 import 'package:bioallin/presentation/screens/request_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +21,6 @@ class MyApp extends StatelessWidget {
             titleTextStyle: TextStyle(color: Colors.white),
           ),
         ),
-        home: const RequestCollect());
+        home: const HomeScreen());
   }
 }
