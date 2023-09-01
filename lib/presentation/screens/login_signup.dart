@@ -21,7 +21,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
               height: 400,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("images/vegetacion.jpg"),
+                      image: AssetImage("assets/images/vegetacion.jpg"),
                       fit: BoxFit.fill)),
             ),
           ),
@@ -129,7 +129,7 @@ INICIAR SESION''',
                     child: Container(
                       decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage("images/bioallin.png"),
+                              image: AssetImage("assets/images/bioallin.png"),
                               fit: BoxFit.fill),
                           borderRadius: BorderRadius.circular(120),
                           boxShadow: [

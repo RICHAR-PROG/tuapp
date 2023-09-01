@@ -1,8 +1,9 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:bioallin/presentation/screens/history_screen.dart';
+import 'package:bioallin/presentation/screens/home_screen.dart';
+import 'package:bioallin/presentation/screens/info_screen.dart';
 import 'package:bioallin/presentation/screens/perfil_screen.dart';
-import 'package:bioallin/presentation/widgets/views/perfil.dart';
 import 'package:flutter/material.dart';
 
 // class BottomNavBarRaisedInsetFb1 extends StatefulWidget {
@@ -230,15 +231,23 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                   text: "Home",
                   icon: Icons.home_outlined,
                   selected: _perfilSelected,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const HomeScreen()),
+                      );
+                  },
                   defaultColor: secondaryColor,
                   selectedColor: primaryColor,
                 ),
                 NavBarIcon(
-                  text: "Contenido",
-                  icon: Icons.menu_book_outlined,
-                  selected: _perfilSelected,
-                  onPressed: () {},
+                  text: "Search",
+                  icon: Icons.book,
+                   selected: _perfilSelected,
+                  onPressed: () {
+                    
+                  },
+                  
                   defaultColor: secondaryColor,
                   selectedColor: primaryColor,
                 ),
