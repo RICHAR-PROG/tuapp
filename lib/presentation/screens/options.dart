@@ -193,7 +193,7 @@ class BottomNavBarCurvedFb1 extends StatefulWidget {
 }
 
 class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
-   bool _perfilSelected = false;
+  bool _perfilSelected = false;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -202,8 +202,12 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
     const primaryColor = Color.fromARGB(255, 85, 212, 89);
     const secondaryColor = Colors.black54;
     // const  accentColor = const Color(0xffffffff);
+<<<<<<< HEAD
     const backgroundColor = Color(0xFFE8EBF0);
     
+=======
+    const backgroundColor = Colors.white;
+>>>>>>> c45748ef90345872a3a5bed47a5425222ad5efc6
 
     return BottomAppBar(
       color: Colors.transparent,
@@ -221,6 +225,7 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                 elevation: 0.1,
                 onPressed: () {},
                 child: const Icon(Icons.delete_forever_rounded)),
+                
           ),
           SizedBox(
             height: height,
@@ -245,10 +250,7 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                   icon: Icons.book,
                    selected: _perfilSelected,
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const InfoScreen()),
-                      );
+                    
                   },
                   
                   defaultColor: secondaryColor,
@@ -256,7 +258,7 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                 ),
                 const SizedBox(width: 56),
                 NavBarIcon(
-                    text: "History",
+                    text: "Historial",
                     icon: Icons.history,
                     selected: _perfilSelected,
                     onPressed: () {
@@ -280,7 +282,8 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                     if (_perfilSelected) {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const PerfilScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => const PerfilScreen()),
                       );
                     }
                   },

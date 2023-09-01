@@ -1,4 +1,5 @@
-import 'package:bioallin/presentation/screens/home_screen.dart';
+// import 'package:bioallin/presentation/screens/home_screen.dart';
+import 'package:bioallin/presentation/screens/request_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -17,9 +18,8 @@ class MyApp extends StatelessWidget {
           appBarTheme: const AppBarTheme(
             backgroundColor: Color.fromARGB(255, 85, 212, 89),
             titleTextStyle: TextStyle(color: Colors.white),
-            
           ),
         ),
-        home: const HomeScreen());
+        home: const RequestCollect());
   }
 }
