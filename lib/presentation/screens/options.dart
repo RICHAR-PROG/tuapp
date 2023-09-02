@@ -3,10 +3,10 @@
 import 'package:bioallin/presentation/screens/history_screen.dart';
 import 'package:bioallin/presentation/screens/home_screen.dart';
 import 'package:bioallin/presentation/screens/info_screen.dart';
+import 'package:bioallin/presentation/screens/map_screen.dart';
 import 'package:bioallin/presentation/screens/perfil_screen.dart';
 import 'package:bioallin/presentation/screens/request_screen.dart';
 import 'package:flutter/material.dart';
-
 
 class BottomNavBarCurvedFb1 extends StatefulWidget {
   const BottomNavBarCurvedFb1({Key? key}) : super(key: key);
@@ -42,13 +42,13 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                 backgroundColor: primaryColor,
                 elevation: 0.1,
                 onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const RequestCollect()),
-                      );
-                  },
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const RequestCollect()),
+                  );
+                },
                 child: const Icon(Icons.delete_forever_rounded)),
-                
           ),
           SizedBox(
             height: height,
@@ -61,25 +61,25 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                   selected: _perfilSelected,
                   onPressed: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const HomeScreen()),
-                      );
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HomeScreen()),
+                    );
                   },
                   defaultColor: secondaryColor,
                   selectedColor: primaryColor,
                 ),
                 NavBarIcon(
-                  text: "Search",
+                  text: "Buscar",
                   icon: Icons.book,
-                   selected: _perfilSelected,
-                 onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const InfoScreen()),
-                      );
-                    },
-                  
+                  selected: _perfilSelected,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const InfoScreen()),
+                    );
+                  },
                   defaultColor: secondaryColor,
                   selectedColor: primaryColor,
                 ),
