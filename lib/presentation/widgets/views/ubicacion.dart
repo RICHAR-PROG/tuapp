@@ -5,8 +5,19 @@ class Mapas extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("hola esto e suna mapa"),
+    return  Center(
+      child:Container(
+            width: double.infinity,
+            height: double.infinity,
+            decoration: const BoxDecoration(
+               
+            ),
+            child: Image.asset(
+                  'assets/images/3619611.jpg',
+                  fit: BoxFit.cover,
+                ),
+            
+          ),
     );
   }
 }
