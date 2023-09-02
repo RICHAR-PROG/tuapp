@@ -1,5 +1,4 @@
-
-
+import 'package:bioallin/presentation/screens/map_screen.dart';
 import 'package:flutter/material.dart';
 
 class Request extends StatelessWidget {
@@ -31,51 +30,30 @@ class Request extends StatelessWidget {
           const Icon(Icons.location_on,
               color: Color.fromARGB(255, 231, 50, 18)),
           const Text('Ubicación'),
-          ButtonElev(),
+          ButtonElev(context),
         ]),
       ),
     );
   }
 
   // ignore: non_constant_identifier_names
-  ElevatedButton ButtonElev() {
-    return ElevatedButton(
-      onPressed: (){
-        
-      },
-      style: ElevatedButton.styleFrom(
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        // side: BorderSide(color: Colors.yellow, width: 5),
-        textStyle: const TextStyle(
-            color: Color.fromARGB(255, 17, 213, 37),
-            fontSize: 16,
-            fontStyle: FontStyle.italic),
-        // shadowColor: const Color.fromARGB(255, 244, 3, 7),
+  ElevatedButton ButtonElev(BuildContext context) {
+  return ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const MapScreen()),
+      );
+    },
+    style: ElevatedButton.styleFrom(
+      foregroundColor: const Color.fromARGB(255, 17, 213, 37), primary: Colors.white,
+      textStyle: const TextStyle(
+        color: Color.fromARGB(255, 17, 213, 37),
+        fontSize: 16,
+        fontStyle: FontStyle.italic,
       ),
-      child: const Text("Ir"),
-    );
-  }
+    ),
+    child: const Text("Ir"),
+  );
 }
-
-class NavBarIcon extends StatelessWidget {
-  const NavBarIcon(
-      {Key? key,
-      required this.text,
-      required this.icon,
-      required this.selected,
-      required this.onPressed,
-      this.selectedColor = const Color.fromARGB(255, 85, 212, 89),
-      this.defaultColor = Colors.black54})
-      : super(key: key);
-  final String text;
-  final IconData icon;
-  final bool selected;
-  final Function() onPressed;
-  final Color defaultColor;
-  final Color selectedColor;
-
-  @override
-  Widget build(BuildContext context) {
-    throw UnimplementedError();
-  }
 }
