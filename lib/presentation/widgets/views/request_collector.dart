@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-// ignore: avoid_web_libraries_in_flutter
-// import 'dart:js';
-
-=======
 import 'package:bioallin/presentation/screens/map_screen.dart';
->>>>>>> 6723f86e31c0d539d31f5fb3a9f005ba3b0da112
+import 'package:bioallin/presentation/widgets/views/map.dart';
 import 'package:flutter/material.dart';
 
 class Request extends StatelessWidget {
@@ -44,22 +39,23 @@ class Request extends StatelessWidget {
 
   // ignore: non_constant_identifier_names
   ElevatedButton ButtonElev(BuildContext context) {
-  return ElevatedButton(
-    onPressed: () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const MapScreen()),
-      );
-    },
-    style: ElevatedButton.styleFrom(
-      foregroundColor: const Color.fromARGB(255, 17, 213, 37), primary: Colors.white,
-      textStyle: const TextStyle(
-        color: Color.fromARGB(255, 17, 213, 37),
-        fontSize: 16,
-        fontStyle: FontStyle.italic,
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const MapScreen()),
+        );
+      },
+      style: ElevatedButton.styleFrom(
+        foregroundColor: const Color.fromARGB(255, 17, 213, 37),
+        primary: Colors.white,
+        textStyle: const TextStyle(
+          color: Color.fromARGB(255, 17, 213, 37),
+          fontSize: 16,
+          fontStyle: FontStyle.italic,
+        ),
       ),
-    ),
-    child: const Text("Ir"),
-  );
-}
+      child: const Text("Ir"),
+    );
+  }
 }

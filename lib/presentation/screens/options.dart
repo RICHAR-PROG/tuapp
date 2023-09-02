@@ -2,11 +2,11 @@
 
 import 'package:bioallin/presentation/screens/history_screen.dart';
 import 'package:bioallin/presentation/screens/home_screen.dart';
+import 'package:bioallin/presentation/screens/info_screen.dart';
 import 'package:bioallin/presentation/screens/map_screen.dart';
 import 'package:bioallin/presentation/screens/perfil_screen.dart';
 import 'package:bioallin/presentation/screens/request_screen.dart';
 import 'package:flutter/material.dart';
-
 
 class BottomNavBarCurvedFb1 extends StatefulWidget {
   const BottomNavBarCurvedFb1({Key? key}) : super(key: key);
@@ -42,19 +42,12 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                 backgroundColor: primaryColor,
                 elevation: 0.1,
                 onPressed: () {
-<<<<<<< HEAD
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const MapS()),
+                    MaterialPageRoute(
+                        builder: (context) => const RequestCollect()),
                   );
                 },
-=======
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const RequestCollect()),
-                      );
-                  },
->>>>>>> 6723f86e31c0d539d31f5fb3a9f005ba3b0da112
                 child: const Icon(Icons.delete_forever_rounded)),
           ),
           SizedBox(
@@ -79,20 +72,14 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                 NavBarIcon(
                   text: "Buscar",
                   icon: Icons.book,
-<<<<<<< HEAD
                   selected: _perfilSelected,
-                  onPressed: () {},
-=======
-                   selected: _perfilSelected,
-                 onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const InfoScreen()),
-                      );
-                    },
-                  
->>>>>>> 6723f86e31c0d539d31f5fb3a9f005ba3b0da112
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const InfoScreen()),
+                    );
+                  },
                   defaultColor: secondaryColor,
                   selectedColor: primaryColor,
                 ),
