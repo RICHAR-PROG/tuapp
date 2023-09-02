@@ -1,5 +1,6 @@
 import 'package:bioallin/presentation/screens/options.dart';
 import 'package:bioallin/presentation/widgets/views/map.dart';
+import 'package:bioallin/presentation/widgets/views/ubicacion.dart';
 import 'package:flutter/material.dart';
 
 class MapS extends StatelessWidget {
@@ -16,7 +17,7 @@ class MapS extends StatelessWidget {
         centerTitle: true,
       ),
       // ignore: prefer_const_constructors
-      body: MapScreen(),
+      body:Mapas() ,
       bottomNavigationBar: const BottomNavBarCurvedFb1(),
       // bottomNavigationBar: const BottomNavBarCurvedFb1(),
     );

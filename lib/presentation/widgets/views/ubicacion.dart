@@ -13,7 +13,7 @@ class Mapas extends StatelessWidget {
                
             ),
             child: Image.asset(
-                  'assets/images/3619611.jpg',
+                  'assets/images/ubicaciones.png',
                   fit: BoxFit.cover,
                 ),
             
