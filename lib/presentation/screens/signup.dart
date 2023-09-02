@@ -1,3 +1,6 @@
+import 'package:bioallin/presentation/firebase_auth_implement/firebase_auth_services.dart';
+import 'package:bioallin/presentation/screens/home_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:bioallin/presentation/screens/login_signup.dart';
 
@@ -7,8 +10,22 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
-  bool isMale = true;
-  bool isRememberMe = false;
+  
+  final FirebaseAuthService _auth = FirebaseAuthService();
+
+  TextEditingController _usernameController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  TextEditingController _confirmPasswordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _usernameController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    _confirmPasswordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +109,7 @@ Rellene sus datos''',
                             color: Colors.blueGrey),
                       ),
                       BuildTextField(
-                          Icons.account_box_outlined, "Nombre y Apellidos", false, false),
+                          Icons.account_box_outlined, "Nombre y Apellidos", false, false, _usernameController),
                       Text(
                         "EMAIL",
                         style: TextStyle(
@@ -101,7 +118,7 @@ Rellene sus datos''',
                             color: Colors.blueGrey),
                       ),
                       BuildTextField(
-                          Icons.email_outlined, "Email", false, true),
+                          Icons.email_outlined, "Email", false, true, _emailController),
                       Text(
                         "CONTRASEÑA",
                         style: TextStyle(
@@ -110,7 +127,7 @@ Rellene sus datos''',
                             color: Colors.blueGrey),
                       ),
                       BuildTextField(
-                          Icons.lock_outline, "Contraseña", true, false),
+                          Icons.lock_outline, "Contraseña", true, false, _passwordController),
                       Text(
                         "CONFIRMAR CONTRASEÑA",
                         style: TextStyle(
@@ -119,7 +136,7 @@ Rellene sus datos''',
                             color: Colors.blueGrey),
                       ),
                       BuildTextField(
-                          Icons.lock_outline, "Confirmar Contraseña", true, false),
+                          Icons.lock_outline, "Confirmar Contraseña", true, false, _confirmPasswordController),
                     ],
                   ),
                 ),
@@ -174,9 +191,7 @@ Rellene sus datos''',
                   child: Column(
                     children: [
                       TextButton(
-                          onPressed: () {
-                            print("Sesion iniciada");
-                          },
+                          onPressed: _signUp,
                           child: Text(
                             "REGISTRAR",
                             style: TextStyle(fontSize: 18, color: Colors.white),
@@ -221,10 +236,11 @@ Rellene sus datos''',
   }
 
   Widget BuildTextField(
-      IconData icon, String hintText, bool isPassword, bool isMail) {
+      IconData icon, String hintText, bool isPassword, bool isMail, TextEditingController controller) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: TextField(
+        controller: controller,
         obscureText: isPassword,
         keyboardType: isMail ? TextInputType.emailAddress : TextInputType.text,
         decoration: InputDecoration(
@@ -246,5 +262,24 @@ Rellene sus datos''',
         ),
       ),
     );
+  }
+
+  void _signUp() async {
+    String username = _usernameController.text;
+    String email = _emailController.text;
+    String password = _passwordController.text;
+    String confirmPassword = _confirmPasswordController.text;
+
+    User? user = await _auth.signUpWithEmailAndPassword(email, password);
+
+    if(user != null){
+      print("User is succesfully Created.");
+      Navigator.push(context,
+        MaterialPageRoute(
+          builder: (context) => const HomeScreen()),
+      );
+    } else{
+      print("Some error happend");
+    }
   }
 }

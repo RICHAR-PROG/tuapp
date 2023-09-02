@@ -1,10 +1,21 @@
 // import 'package:bioallin/presentation/screens/home_screen.dart';
+import 'package:bioallin/firebase_options.dart';
+import 'package:bioallin/presentation/screens/home_screen.dart';
+import 'package:bioallin/presentation/screens/login_signup.dart';
 import 'package:bioallin/presentation/screens/map_screen.dart';
 import 'package:bioallin/presentation/screens/request_screen.dart';
 import 'package:bioallin/presentation/widgets/views/map.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+  options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -22,6 +33,6 @@ class MyApp extends StatelessWidget {
             titleTextStyle: TextStyle(color: Colors.white),
           ),
         ),
-        home: const MapS());
+        home: LoginSignupScreen());
   }
 }
