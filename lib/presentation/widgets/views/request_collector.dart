@@ -2,7 +2,6 @@
 // import 'dart:js';
 
 import 'package:flutter/material.dart';
-import 'package:bioallin/presentation/screens/map_screen.dart';
 
 class Request extends StatelessWidget {
   const Request({super.key});

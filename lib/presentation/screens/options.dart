@@ -2,7 +2,7 @@
 
 import 'package:bioallin/presentation/screens/history_screen.dart';
 import 'package:bioallin/presentation/screens/home_screen.dart';
-import 'package:bioallin/presentation/screens/info_screen.dart';
+import 'package:bioallin/presentation/screens/map_screen.dart';
 import 'package:bioallin/presentation/screens/perfil_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -218,9 +218,13 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
             child: FloatingActionButton(
                 backgroundColor: primaryColor,
                 elevation: 0.1,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MapS()),
+                  );
+                },
                 child: const Icon(Icons.delete_forever_rounded)),
-                
           ),
           SizedBox(
             height: height,
@@ -233,21 +237,19 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                   selected: _perfilSelected,
                   onPressed: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const HomeScreen()),
-                      );
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HomeScreen()),
+                    );
                   },
                   defaultColor: secondaryColor,
                   selectedColor: primaryColor,
                 ),
                 NavBarIcon(
-                  text: "Search",
+                  text: "Buscar",
                   icon: Icons.book,
-                   selected: _perfilSelected,
-                  onPressed: () {
-                    
-                  },
-                  
+                  selected: _perfilSelected,
+                  onPressed: () {},
                   defaultColor: secondaryColor,
                   selectedColor: primaryColor,
                 ),
