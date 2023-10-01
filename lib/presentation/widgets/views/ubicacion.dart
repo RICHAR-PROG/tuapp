@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class Mapas extends StatelessWidget {
-  const Mapas({super.key});
+class UbicacionPage extends StatefulWidget {
+  const UbicacionPage({super.key});
+
+  @override
+  State<UbicacionPage> createState() => _UbicacionPageState();
+}
+
+class _UbicacionPageState extends State<UbicacionPage> {
+  static const _initialCameraPosition = CameraPosition(
+      target: LatLng(-12.39769625482686, -74.86838076508566), zoom: 10);
 
   @override
   Widget build(BuildContext context) {
-    return  Center(
-      child:Container(
-            width: double.infinity,
-            height: double.infinity,
-            decoration: const BoxDecoration(
-               
-            ),
-            child: Image.asset(
-                  'assets/images/ubicaciones.png',
-                  fit: BoxFit.cover,
-                ),
-            
-          ),
+    return const Scaffold(
+      body: GoogleMap(initialCameraPosition: _initialCameraPosition),
     );
   }
 }
