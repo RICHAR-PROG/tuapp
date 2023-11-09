@@ -192,7 +192,6 @@ Rellene sus datos''',
             child: Container(
               padding: const EdgeInsets.all(20),
               decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 153, 222, 153)
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -205,21 +204,17 @@ Rellene sus datos''',
                         });
                       },
                       child: const Text(
-                        'Mostrar opciones',
-                        style: TextStyle(fontSize: 18, color: Colors.black),
+                        'REGISTRARSE COMO',
+                       
                       ),
                     ),
                   if (showOptions)
                     Column(
                       children: [
                         ElevatedButton(
-                          onPressed: () {
-                            // Acción para la opción "Usuario"
-                            // Navegar al panel del usuario
-                          },
+                          onPressed: _signUp,
                           child: const Text(
                             'Usuario',
-                            style: TextStyle(fontSize: 18, color: Colors.black),
                           ),
                         ),
                         const SizedBox(height: 10),
@@ -230,7 +225,6 @@ Rellene sus datos''',
                           },
                           child: const Text(
                             'Recolector Orgánico',
-                            style: TextStyle(fontSize: 18, color: Colors.black),
                           ),
                         ),
                         const SizedBox(height: 10),
@@ -241,7 +235,6 @@ Rellene sus datos''',
                           },
                           child: const Text(
                             'Recolector Inorgánico',
-                            style: TextStyle(fontSize: 18, color: Colors.black),
                           ),
                         ),
                       ],
