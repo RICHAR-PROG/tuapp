@@ -1,6 +1,13 @@
 // import 'package:bioallin/presentation/screens/home_screen.dart';
 import 'package:bioallin/firebase_options.dart';
 import 'package:bioallin/presentation/screens/login_signup.dart';
+import 'package:bioallin/presentation/screens/map_screen.dart';
+import 'package:bioallin/presentation/screens/request_screen.dart';
+import 'package:bioallin/presentation/widgets/views/map.dart';
+//enlaces para recolector inorganico
+import 'package:bioallin/presentation/screens_recolectorIn/historialRe_screen.dart';
+import 'package:bioallin/presentation/screens_recolectorIn/historialSo_screen.dart';
+//end enalces para recolector inorganico
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -29,6 +36,8 @@ class MyApp extends StatelessWidget {
             titleTextStyle: TextStyle(color: Colors.white),
           ),
         ),
-        home: LoginSignupScreen());
+        //home: LoginSignupScreen());
+        //home: HomeScreen());
+        home: HistorialSoScreen());
   }
 }
