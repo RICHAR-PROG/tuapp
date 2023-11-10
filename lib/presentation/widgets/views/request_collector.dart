@@ -6,13 +6,15 @@ class Request extends StatefulWidget {
 }
 
 class _RequestState extends State<Request> {
+  late TextEditingController wasteTypeController;
   String selectedWasteType = 'Orgánico';
   int selectedQuantity = 1;
   String selectedCollector = 'Recolector 1';
+  bool isFirstTimeEditing = true;
 
   Map<String, List<String>> wasteTypeExamples = {
-    'Orgánico': ['Ejemplo 1', 'Ejemplo 2', 'Ejemplo 3'],
-    'Inorgánico': ['Ejemplo 4', 'Ejemplo 5', 'Ejemplo 6'],
+    'Orgánico': ['carton', 'hojas', 'ramas'],
+    'Inorgánico': ['vidrio', 'plastico', 'ropa vieja'],
   };
 
   List<DropdownMenuItem<String>> getWasteTypeDropdownItems() {
@@ -34,12 +36,9 @@ class _RequestState extends State<Request> {
   }
 
   void guardarDatos() {
-    // Lógica para guardar los datos
-    // Puedes agregar aquí la acción que deseas realizar al guardar los datos
-    // Por ejemplo, mostrar un alert con un mensaje exitoso
     showDialog(
       context: context,
-      barrierDismissible: false, // No permite cerrar el diálogo al presionar fuera de él
+      barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Éxito'),
@@ -58,25 +57,39 @@ class _RequestState extends State<Request> {
   }
 
   void verUbicacion() {
-    // Lógica para ver la ubicación y navegar a otro panel
-    // Puedes agregar aquí la acción que deseas realizar al presionar el enlace
-    // Por ejemplo, navegar a otra pantalla
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => OtroPanel()),
     );
   }
 
+  void updateWasteTypeExamples() {
+    final List<String> examples = wasteTypeExamples[selectedWasteType] ?? [];
+    wasteTypeController.text = examples.join(', ');
+  }
+
+  void clearText() {
+    setState(() {
+      wasteTypeController.text = '';
+      isFirstTimeEditing = true;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    wasteTypeController = TextEditingController();
+    updateWasteTypeExamples();
+  }
+
   @override
   Widget build(BuildContext context) {
-    List<String> examples = wasteTypeExamples[selectedWasteType] ?? [];
-
     return Dialog(
       elevation: 13,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Container(
         width: MediaQuery.of(context).size.width / 1.5,
-        height: 400, // Establece una altura fija para el Dialog
+        height: 400,
         decoration: BoxDecoration(
           border: Border.all(
             color: const Color.fromARGB(255, 255, 255, 255),
@@ -115,6 +128,7 @@ class _RequestState extends State<Request> {
                   onChanged: (newValue) {
                     setState(() {
                       selectedWasteType = newValue!;
+                      updateWasteTypeExamples();
                     });
                   },
                   items: getWasteTypeDropdownItems(),
@@ -167,14 +181,27 @@ class _RequestState extends State<Request> {
               ],
             ),
             const SizedBox(height: 10),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   child: TextField(
+                    controller: wasteTypeController,
                     decoration: InputDecoration(
-                      hintText: 'plastico, vidrio, etc ',
+                      hintText: 'Ejemplos: ',
+                      suffixIcon: IconButton(
+                        icon: Icon(Icons.clear),
+                        onPressed: clearText,
+                      ),
                     ),
+                    onChanged: (value) {
+                      if (isFirstTimeEditing && value.isNotEmpty) {
+                        setState(() {
+                          wasteTypeController.text = value;
+                          isFirstTimeEditing = false;
+                        });
+                      }
+                    },
                   ),
                 ),
               ],
