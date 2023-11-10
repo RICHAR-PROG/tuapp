@@ -54,7 +54,7 @@ class Request extends StatelessWidget {
           fontStyle: FontStyle.italic,
         ),
       ),
-      child: const Text("Ir"),
+      child: const Text("a ubicación"),
     );
   }
 }

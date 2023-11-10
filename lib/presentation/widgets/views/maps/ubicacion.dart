@@ -13,7 +13,7 @@ class _UbicacionPageState extends State<UbicacionPage> {
   final _controller = UbicacionController();
 
   static const _initialCameraPosition = CameraPosition(
-      target: LatLng(-12.39769625482686, -74.86838076508566), zoom: 15);
+      target: LatLng(-12.39769625482686, -74.86838076508566), zoom: 16);
 
   @override
   Widget build(BuildContext context) {
