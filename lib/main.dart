@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
         //home: LoginSignupScreen());
-        home: RequestUbicacion());
+        home: HomeScreen());
     //home: HistorialSoScreen());
   }
 }
