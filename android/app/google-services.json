@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "583984229682",
+    "project_id": "bioallin-tuapp",
+    "storage_bucket": "bioallin-tuapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:583984229682:android:5c51064d15e77b23bfbb2b",
+        "android_client_info": {
+          "package_name": "com.example.bioallin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "583984229682-3t75m3nnf2ot511vpdr9l7s9f1vd655t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0te1neJ4lVCbDGMz5lFC04jqTLxWZIyg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "583984229682-3t75m3nnf2ot511vpdr9l7s9f1vd655t.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "583984229682-3mjcmu54q0blcsegi6j4sd6fnn74ccv4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.bioallin"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

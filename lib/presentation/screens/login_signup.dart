@@ -1,3 +1,6 @@
+import 'package:bioallin/presentation/firebase_auth_implement/firebase_auth_services.dart';
+import 'package:bioallin/presentation/screens/home_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:bioallin/presentation/screens/signup.dart';
 
@@ -7,6 +10,18 @@ class LoginSignupScreen extends StatefulWidget {
 }
 
 class _LoginSignupScreenState extends State<LoginSignupScreen> {
+
+  final FirebaseAuthService _auth = FirebaseAuthService();
+
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +98,7 @@ INICIAR SESION''',
                             color: Colors.blueGrey),
                       ),
                       BuildTextField(
-                          Icons.email_outlined, "Email", false, true),
+                          Icons.email_outlined, "Email", false, true, _emailController),
                       Text(
                         "CONTRASEÑA",
                         style: TextStyle(
@@ -92,7 +107,7 @@ INICIAR SESION''',
                             color: Colors.blueGrey),
                       ),
                       BuildTextField(
-                          Icons.lock_outline, "Contraseña", true, false),
+                          Icons.lock_outline, "Contraseña", true, false, _passwordController),
                       TextButton(
                           onPressed: () {
                             print("OK");
@@ -154,9 +169,7 @@ INICIAR SESION''',
                   child: Column(
                     children: [
                       TextButton(
-                          onPressed: () {
-                            print("Sesion iniciada");
-                          },
+                          onPressed: _signIn,
                           child: Text(
                             "INICIAR SESION",
                             style: TextStyle(fontSize: 18, color: Colors.white),
@@ -201,10 +214,11 @@ INICIAR SESION''',
   }
 
   Widget BuildTextField(
-      IconData icon, String hintText, bool isPassword, bool isMail) {
+      IconData icon, String hintText, bool isPassword, bool isMail, TextEditingController controller) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 18),
       child: TextField(
+        controller: controller,
         obscureText: isPassword,
         keyboardType: isMail ? TextInputType.emailAddress : TextInputType.text,
         decoration: InputDecoration(
@@ -226,5 +240,22 @@ INICIAR SESION''',
         ),
       ),
     );
+  }
+
+  void _signIn() async {
+    String email = _emailController.text;
+    String password = _passwordController.text;
+
+    User? user = await _auth.signInWithEmailAndPassword(email, password);
+
+    if(user != null){
+      print("User is succesfully SignIn");
+      Navigator.push(context,
+        MaterialPageRoute(
+          builder: (context) => const HomeScreen()),
+      );
+    } else{
+      print("Some error happend");
+    }
   }
 }
