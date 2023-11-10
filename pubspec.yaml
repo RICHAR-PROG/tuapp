@@ -43,6 +43,7 @@ dependencies:
   # mapbox_gl: ^0.16.0
   firebase_core: ^2.15.1
   firebase_auth: ^4.9.0
+  google_maps_flutter: ^2.5.0
 
 dev_dependencies:
   flutter_test:
