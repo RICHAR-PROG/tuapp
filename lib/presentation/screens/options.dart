@@ -2,7 +2,6 @@
 
 import 'package:bioallin/presentation/screens/history_screen.dart';
 import 'package:bioallin/presentation/screens/home_screen.dart';
-import 'package:bioallin/presentation/screens/info_screen.dart';
 import 'package:bioallin/presentation/screens/map_screen.dart';
 import 'package:bioallin/presentation/screens/perfil_screen.dart';
 import 'package:bioallin/presentation/screens/request_screen.dart';
@@ -69,20 +68,7 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                   defaultColor: secondaryColor,
                   selectedColor: primaryColor,
                 ),
-                NavBarIcon(
-                  text: "Buscar",
-                  icon: Icons.book,
-                  selected: _perfilSelected,
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const InfoScreen()),
-                    );
-                  },
-                  defaultColor: secondaryColor,
-                  selectedColor: primaryColor,
-                ),
+                
                 const SizedBox(width: 56),
                 NavBarIcon(
                     text: "Historial",

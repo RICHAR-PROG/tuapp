@@ -19,7 +19,7 @@ class HistorialSoScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child:  const CustomPaint(
           // painter: BottomNavCurvePainter(),
-          child:historialSolicitadores(),
+          child:HistorialSolicitadores(),
         ),
       ),
       bottomNavigationBar: const BottomNavBarCurvedFb1(),
