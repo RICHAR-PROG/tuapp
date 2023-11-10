@@ -17,9 +17,9 @@ class HistorialReScreen  extends StatelessWidget {
       ),
       // ignore: prefer_const_constructors
       body: SingleChildScrollView(
-        child:  const CustomPaint(
+        child:   CustomPaint(
           // painter: BottomNavCurvePainter(),
-          child:historialRecoleccion(),
+          child:CollectorPanel(),
         ),
       ),
       bottomNavigationBar: const BottomNavBarCurvedFb1(),
