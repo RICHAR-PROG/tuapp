@@ -1,4 +1,5 @@
 
+import 'package:bioallin/presentation/screens/map_screen.dart';
 import 'package:flutter/material.dart';
 
 class SolicitarRecolector extends StatefulWidget {
@@ -43,7 +44,7 @@ class _RequestState extends State<SolicitarRecolector> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Éxito'),
-          content: const Text('Los datos se guardaron exitosamente.'),
+          content: const Text('Los datos se enviaron exitosamente.'),
           actions: [
             TextButton(
               onPressed: () {
@@ -60,7 +61,7 @@ class _RequestState extends State<SolicitarRecolector> {
   void verUbicacion() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => OtroPanel()),
+      MaterialPageRoute(builder: (context) => const MapS()),
     );
   }
 
@@ -89,8 +90,8 @@ class _RequestState extends State<SolicitarRecolector> {
       elevation: 13,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Container(
-        width: MediaQuery.of(context).size.width / 1.5,
-        height: 400,
+       // width: MediaQuery.of(context).size.width / 1.5,
+        height: 450,
         decoration: BoxDecoration(
           border: Border.all(
             color: const Color.fromARGB(255, 255, 255, 255),
@@ -115,7 +116,7 @@ class _RequestState extends State<SolicitarRecolector> {
                 const Text('Ubicación'),
                 TextButton(
                   onPressed: verUbicacion,
-                  child: const Text('Ver Ubicación'),
+                  child: const Text('Enviar ubicación'),
                 ),
               ],
             ),
@@ -123,7 +124,7 @@ class _RequestState extends State<SolicitarRecolector> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text('Tipo de residuo'),
+                const Text('Tipo de recolector'),
                 DropdownButton<String>(
                   value: selectedWasteType,
                   onChanged: (newValue) {
@@ -189,7 +190,7 @@ class _RequestState extends State<SolicitarRecolector> {
                   child: TextField(
                     controller: wasteTypeController,
                     decoration: InputDecoration(
-                      hintText: 'Ejemplos: ',
+                      hintText: 'Escriba el tipo de residuo ',
                       suffixIcon: IconButton(
                         icon: Icon(Icons.clear),
                         onPressed: clearText,
@@ -207,21 +208,22 @@ class _RequestState extends State<SolicitarRecolector> {
                 ),
               ],
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 60),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ElevatedButton(
-                  onPressed: () {
-                    guardarDatos();
-                  },
-                  child: const Text('Guardar'),
-                ),
+                
                 ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
                   child: const Text('Cancelar'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    guardarDatos();
+                  },
+                  child: const Text('Solicitar'),
                 ),
               ],
             ),
@@ -232,16 +234,4 @@ class _RequestState extends State<SolicitarRecolector> {
   }
 }
 
-class OtroPanel extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Otro Panel'),
-      ),
-      body: const Center(
-        child: Text('Este es otro panel.'),
-      ),
-    );
-  }
-}
+

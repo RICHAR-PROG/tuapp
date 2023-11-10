@@ -1,4 +1,4 @@
-import 'dart:html';
+
 
 import 'package:bioallin/presentation/screens/map_screen.dart';
 import 'package:flutter/material.dart';

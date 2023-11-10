@@ -1,5 +1,4 @@
 import 'package:bioallin/presentation/screens/options.dart';
-import 'package:bioallin/presentation/widgets/views/maps/request_collector.dart';
 import 'package:bioallin/presentation/widgets/views/request_collector.dart';
 import 'package:flutter/material.dart';
 
