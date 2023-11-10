@@ -1,13 +1,12 @@
-import 'package:bioallin/presentation/screens/map_screen.dart';
-import 'package:bioallin/presentation/widgets/views/map.dart';
+
 import 'package:flutter/material.dart';
 
-class Request extends StatefulWidget {
+class SolicitarRecolector extends StatefulWidget {
   @override
-  State<Request> createState() => _RequestState();
+  State<SolicitarRecolector> createState() => _RequestState();
 }
 
-class _RequestState extends State<Request> {
+class _RequestState extends State<SolicitarRecolector> {
   late TextEditingController wasteTypeController;
   String selectedWasteType = 'Orgánico';
   int selectedQuantity = 1;
@@ -269,7 +268,7 @@ class MyApp extends StatelessWidget {
               showDialog(
                 context: context,
                 builder: (BuildContext context) {
-                  return Request();
+                  return SolicitarRecolector();
                 },
               );
             },
