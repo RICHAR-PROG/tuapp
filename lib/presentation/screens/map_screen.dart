@@ -1,5 +1,5 @@
 import 'package:bioallin/presentation/screens/options.dart';
-import 'package:bioallin/presentation/widgets/views/ubicacion.dart';
+import 'package:bioallin/presentation/widgets/views/maps/ubicacion.dart';
 import 'package:flutter/material.dart';
 
 class MapS extends StatelessWidget {
