@@ -245,37 +245,3 @@ class OtroPanel extends StatelessWidget {
     );
   }
 }
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter Demo'),
-        ),
-        body: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return SolicitarRecolector();
-                },
-              );
-            },
-            child: const Text('Abrir diálogo'),
-          ),
-        ),
-      ),
-    );
-  }
-}
