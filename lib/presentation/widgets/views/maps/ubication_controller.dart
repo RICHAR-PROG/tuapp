@@ -1,5 +1,6 @@
-// ignore: file_names
-import 'package:bioallin/presentation/widgets/views/maps/utils/maps_styles.dart';
+// TODO Implement this library.
+
+import 'package:bioallin/presentation/widgets/views/maps/utils/maps_style.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class UbicacionController {

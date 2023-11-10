@@ -3,8 +3,8 @@ import 'dart:html';
 import 'package:bioallin/presentation/screens/map_screen.dart';
 import 'package:flutter/material.dart';
 
-class RequestUbicacion extends StatelessWidget {
-  const RequestUbicacion({super.key});
+class Request extends StatelessWidget {
+  const Request({super.key});
 
   @override
   Widget build(BuildContext context) {
