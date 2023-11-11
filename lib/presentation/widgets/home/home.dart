@@ -8,14 +8,7 @@ class Home extends StatelessWidget {
     return const Center(
       child: Column(
         children: [
-          Text(
-            "Tipos de residuos",
-            style: TextStyle(
-                color: Colors.black,
-                fontSize: 25,
-                fontFamily: AutofillHints.nickname,
-                fontWeight: FontWeight.bold),
-          ),
+          
           IllustrationFb1(),
           IllustrationFb4(),
           IllustrationFb2(),

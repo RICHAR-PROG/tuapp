@@ -3,6 +3,7 @@ import 'package:bioallin/firebase_options.dart';
 import 'package:bioallin/presentation/screens/home_screen.dart';
 import 'package:bioallin/presentation/screens/map_screen.dart';
 import 'package:bioallin/presentation/screens/request_screen.dart';
+import 'package:bioallin/presentation/screens_recolectorIn/historialSo_screen.dart';
 import 'package:bioallin/presentation/widgets/views/map.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
             titleTextStyle: TextStyle(color: Colors.white),
           ),
         ),
-        home: const HomeScreen());
+      //home: const HomeScreen());
+    home: const HistorialSoScreen());
   }
 }
