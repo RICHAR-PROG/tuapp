@@ -1,153 +1,154 @@
 import 'package:flutter/material.dart';
 
 class HistorialSolicitadores extends StatelessWidget {
-  const HistorialSolicitadores({Key? key});
+  const HistorialSolicitadores ({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(12.0),
-      child: Center(
-        child: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Container(
-            decoration: const BoxDecoration(
-              border: Border(
-                top: BorderSide(color: Colors.blueGrey),
-                bottom: BorderSide(color: Colors.blueGrey),
-                left: BorderSide(color: Colors.white),  // Cambiado a color blanco
-                right: BorderSide(color: Colors.white),  // Cambiado a color blanco
+    return Center(
+      child: Column(children: [
+        const SizedBox(
+          height: 10,
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: InfoCard(
+            onMoreTap: () {},
+            title: 'Residuo inorgánico ',
+          ),
+        )
+      ]),
+    );
+  }
+}
+
+class InfoCard extends StatelessWidget {
+  final String title;
+  final String body;
+  final Function() onMoreTap;
+
+  final String subInfoTitle;
+  final String subInfoText;
+  final Widget subIcon;
+
+  const InfoCard(
+      {required this.title,
+      this.body =
+          """Aqui usted señora mia arrojo exitosamente su residuo, ¡siga asi puntual! 😊""",
+      required this.onMoreTap,
+      this.subIcon = const CircleAvatar(
+        backgroundColor: Colors.green,
+        radius: 25,
+        child: Icon(
+          Icons.deselect_sharp,
+          color: Colors.white,
+        ),
+      ),
+      this.subInfoText = "545 kilos",
+      this.subInfoTitle = "Residuo inorgánico ",
+      Key? key})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(25.0),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(25.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(.05),
+              offset: const Offset(0, 10),
+              blurRadius: 0,
+              spreadRadius: 0,
+            )
+          ],
+          gradient: const RadialGradient(
+            colors: [
+              Color.fromARGB(255, 33, 167, 93),
+               Color.fromARGB(255, 33, 167, 93)
+            ],
+            focal: Alignment.topCenter,
+            radius: .85,
+          )),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                title,
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold),
+              ),
+              Container(
+                width: 75,
+                height: 30,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100.0),
+                  gradient: const LinearGradient(
+                      colors: [Colors.white, Colors.white],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter),
+                ),
+                child: GestureDetector(
+                  onTap: onMoreTap,
+                  child: const Center(
+                      child: Text(
+                    "30/08/23",
+                    style: TextStyle(color: Colors.green),
+                  )),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          Text(
+            body,
+            style:
+                TextStyle(color: Colors.white.withOpacity(.75), fontSize: 14),
+          ),
+          const SizedBox(height: 15),
+          Container(
+            width: double.infinity,
+            height: 75,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(25.0),
+              color: Colors.white,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  subIcon,
+                  const SizedBox(width: 10),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(subInfoTitle),
+                      Text(
+                        subInfoText,
+                        style: const TextStyle(
+                          color: Colors.green,
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
               ),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Padding(
-                  padding: EdgeInsets.all(16),
-                  child: Text(
-                    'Solicitud 1',
-                    style: TextStyle(
-                      color: Colors.blueGrey,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  
-                ),
-                Container(
-                  height: 2,
-                  color: Colors.blueGrey,
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: Row(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(8),
-                          decoration: const BoxDecoration(
-                            border: Border(
-                              right: BorderSide(color: Colors.blueGrey),
-                            ),
-                          ),
-                          child: const Icon(
-                            Icons.assignment_ind,
-                            color: Colors.blueGrey,
-                          ),
-                        ),
-                        const SizedBox(width: 16),
-                        const Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Usuario Cliente',
-                              style: TextStyle(
-                                color: Colors.blueGrey,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              'John Doe',
-                              style: TextStyle(
-                                color: Colors.blueGrey,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(width: 24),
-                        const Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Ubicación de la Solicitud',
-                              style: TextStyle(
-                                color: Colors.blueGrey,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              '123 Main Street, Cityville',
-                              style: TextStyle(
-                                color: Colors.blueGrey,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(width: 24),
-                        const Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Tipo de Residuo Solicitado',
-                              style: TextStyle(
-                                color: Colors.blueGrey,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              'Vidrio',
-                              style: TextStyle(
-                                color: Colors.blueGrey,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(width: 24),
-                        const Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Kilos',
-                              style: TextStyle(
-                                color: Colors.blueGrey,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              '5 kg',
-                              style: TextStyle(
-                                color: Colors.blueGrey,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+          )
+        ],
       ),
     );
   }
