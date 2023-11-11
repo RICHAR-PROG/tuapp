@@ -192,7 +192,7 @@ class _RequestState extends State<SolicitarRecolector> {
                     decoration: InputDecoration(
                       hintText: 'Escriba el tipo de residuo ',
                       suffixIcon: IconButton(
-                        icon: Icon(Icons.clear),
+                        icon: const Icon(Icons.clear),
                         onPressed: clearText,
                       ),
                     ),
@@ -208,7 +208,7 @@ class _RequestState extends State<SolicitarRecolector> {
                 ),
               ],
             ),
-            const SizedBox(height: 60),
+            const SizedBox(height: 40),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

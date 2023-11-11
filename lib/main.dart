@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
             titleTextStyle: TextStyle(color: Colors.white),
           ),
         ),
-        //home: const HomeScreen());
-        home: const HistorialSoScreen());
+      //home: const HomeScreen());
+    home: const HistorialSoScreen());
   }
 }

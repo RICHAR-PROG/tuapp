@@ -55,22 +55,6 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 NavBarIcon(
-                  text: "Home",
-                  icon: Icons.home_outlined,
-                  selected: _perfilSelected,
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const HomeScreen()),
-                    );
-                  },
-                  defaultColor: secondaryColor,
-                  selectedColor: primaryColor,
-                ),
-                
-                const SizedBox(width: 56),
-                NavBarIcon(
                     text: "Historial",
                     icon: Icons.history,
                     selected: _perfilSelected,
@@ -83,6 +67,9 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                     },
                     defaultColor: secondaryColor,
                     selectedColor: primaryColor),
+                
+                const SizedBox(width: 56),
+                
                 NavBarIcon(
                   text: "Perfil",
                   icon: Icons.person,
