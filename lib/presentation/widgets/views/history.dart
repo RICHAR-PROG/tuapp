@@ -7,32 +7,11 @@ class History extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(children: [
-        const SizedBox(
-          height: 10,
-        ),
-        ElevatedButton(
-          onPressed: () async {
-            final DateTime? newDate = await showDatePicker(
-              context: context,
-              initialDate: DateTime(2023, 08, 30),
-              firstDate: DateTime(2017, 1),
-              lastDate: DateTime(2025, 7),
-              helpText: 'Seleciona la fecha ',
-            );
-            if (newDate != null) {
-              // Aquí puedes realizar acciones con la fecha seleccionada
-            }
-          },
-          child: const Text('Seleccionar fecha'),
-        ),
-        const SizedBox(
-          height: 20,
-        ),
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: InfoCard(
             onMoreTap: () {},
-            title: 'Residuo inorgánico ',
+            title: 'Historial',
           ),
         )
       ]),
@@ -47,23 +26,25 @@ class InfoCard extends StatelessWidget {
 
   final String subInfoTitle;
   final String subInfoText;
+  final String subInfoUbicacion;
   final Widget subIcon;
 
   const InfoCard(
       {required this.title,
       this.body =
-          """Aqui usted señora mia arrojo exitosamente su residuo, ¡siga asi puntual! 😊""",
+          """usted realizo una solicitud al señor(a) Juan Mendez 😊""",
       required this.onMoreTap,
       this.subIcon = const CircleAvatar(
         backgroundColor: Colors.green,
         radius: 25,
         child: Icon(
-          Icons.deselect_sharp,
+          Icons.location_on,
           color: Colors.white,
         ),
       ),
-      this.subInfoText = "545 kilos",
-      this.subInfoTitle = "Residuo inorgánico ",
+      this.subInfoText = "5 kilos",
+      this.subInfoTitle = "El residuo es: vidrio, papel",
+      this.subInfoUbicacion = "Jr. Manuel Prado",
       Key? key})
       : super(key: key);
 
@@ -72,23 +53,25 @@ class InfoCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(25.0),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(25.0),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(.05),
-              offset: const Offset(0, 10),
-              blurRadius: 0,
-              spreadRadius: 0,
-            )
-          ],
-          gradient: const RadialGradient(
+        borderRadius: BorderRadius.circular(25.0),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.3),
+            offset: const Offset(0, 4),
+            blurRadius: 10,
+            spreadRadius: 0,
+          )
+        ],
+        /*gradient: const RadialGradient(
             colors: [
-              Color.fromARGB(255, 118, 221, 228),
-              Color.fromARGB(255, 95, 197, 213)
+              Color.fromARGB(255, 239, 245, 234),
+              Color.fromARGB(255, 239, 245, 234),
             ],
             focal: Alignment.topCenter,
             radius: .85,
-          )),
+          )*/
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -99,7 +82,7 @@ class InfoCard extends StatelessWidget {
               Text(
                 title,
                 style: const TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 26,
                     fontWeight: FontWeight.bold),
               ),
@@ -108,10 +91,10 @@ class InfoCard extends StatelessWidget {
                 height: 30,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(100.0),
-                  gradient: const LinearGradient(
-                      colors: [Colors.white, Colors.white],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter),
+                  gradient: const LinearGradient(colors: [
+                    Colors.white,
+                    Color.fromARGB(255, 214, 246, 214)
+                  ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
                 ),
                 child: GestureDetector(
                   onTap: onMoreTap,
@@ -128,15 +111,23 @@ class InfoCard extends StatelessWidget {
           Text(
             body,
             style:
-                TextStyle(color: Colors.white.withOpacity(.75), fontSize: 14),
+                TextStyle(color: Colors.black.withOpacity(.75), fontSize: 14),
           ),
           const SizedBox(height: 15),
           Container(
             width: double.infinity,
-            height: 75,
+            height: 100,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25.0),
-              color: Colors.white,
+              color: Color.fromARGB(255, 253, 253, 253),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  offset: const Offset(0, 4),
+                  blurRadius: 10,
+                  spreadRadius: 0,
+                )
+              ],
             ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -148,6 +139,14 @@ class InfoCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Text(
+                        subInfoUbicacion, // Agrega el Text para mostrar la ubicación
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                       Text(subInfoTitle),
                       Text(
                         subInfoText,

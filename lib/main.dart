@@ -1,6 +1,7 @@
 // import 'package:bioallin/presentation/screens/home_screen.dart';
 import 'package:bioallin/firebase_options.dart';
 import 'package:bioallin/presentation/screens/home_screen.dart';
+import 'package:bioallin/presentation/screens/login_signup.dart';
 import 'package:bioallin/presentation/screens_recolectorIn/historialRe_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +32,8 @@ class MyApp extends StatelessWidget {
                 TextStyle(color: Color.fromARGB(255, 249, 247, 247)),
           ),
         ),
-        home: const HomeScreen());
-    // home: HistorialReScreen());
+        //home: const HomeScreen());
+        //home: HistorialReScreen());
+        home: LoginSignupScreen());
   }
 }
