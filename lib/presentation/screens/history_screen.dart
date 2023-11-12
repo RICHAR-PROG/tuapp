@@ -10,16 +10,22 @@ class HistoryScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: const Text("Historial",style: TextStyle(
-          fontSize: 20
-        ),),
-        centerTitle: true ,
+        title: const Text(
+          "Historial",
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            decorationStyle: TextDecorationStyle.double,
+            fontFamily: AutofillHints.addressCity,
+          ),
+        ),
+        centerTitle: true,
       ),
       // ignore: prefer_const_constructors
       body: SingleChildScrollView(
-        child:  const CustomPaint(
+        child: const CustomPaint(
           // painter: BottomNavCurvePainter(),
-          child:History(),
+          child: History(),
         ),
       ),
       bottomNavigationBar: const BottomNavBarCurvedFb1(),

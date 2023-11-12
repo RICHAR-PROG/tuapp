@@ -11,7 +11,10 @@ class PerfilScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Text("Perfil",style: TextStyle(
-          fontSize: 20
+          fontSize: 20,
+            fontWeight: FontWeight.bold,
+            decorationStyle: TextDecorationStyle.double,
+            fontFamily: AutofillHints.addressCity,
         ),),
         centerTitle: true ,
       ),

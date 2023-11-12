@@ -17,7 +17,7 @@ class HistorialSolicitadores extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: InfoCard(
             onMoreTap: () {},
-            title: 'Residuo inorgánico ',
+            title: 'Solicitud 1',
           ),
         )
       ]),
@@ -37,18 +37,18 @@ class InfoCard extends StatelessWidget {
   const InfoCard(
       {required this.title,
       this.body =
-          """Aqui usted señora mia arrojo exitosamente su residuo, ¡siga asi puntual! 😊""",
+          """Tiene una solicitud pendiente de pampas del señor(ra) juan Jose Guerra 😊""",
       required this.onMoreTap,
       this.subIcon = const CircleAvatar(
         backgroundColor: Colors.green,
         radius: 25,
         child: Icon(
-          Icons.deselect_sharp,
+          Icons.location_on,
           color: Colors.white,
         ),
       ),
       this.subInfoText = "545 kilos",
-      this.subInfoTitle = "Residuo inorgánico ",
+      this.subInfoTitle = "el risiduo es vidrio  ",
       Key? key})
       : super(key: key);
 
@@ -60,7 +60,7 @@ class InfoCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(25.0),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(.05),
+              color: Colors.green.withOpacity(.05),
               offset: const Offset(0, 10),
               blurRadius: 0,
               spreadRadius: 0,
@@ -68,8 +68,8 @@ class InfoCard extends StatelessWidget {
           ],
           gradient: const RadialGradient(
             colors: [
-              Color.fromARGB(255, 33, 167, 93),
-               Color.fromARGB(255, 33, 167, 93)
+              Color.fromARGB(255, 239, 245, 234),
+              Color.fromARGB(255, 239, 245, 234),
             ],
             focal: Alignment.topCenter,
             radius: .85,
@@ -84,7 +84,7 @@ class InfoCard extends StatelessWidget {
               Text(
                 title,
                 style: const TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 26,
                     fontWeight: FontWeight.bold),
               ),
@@ -113,7 +113,7 @@ class InfoCard extends StatelessWidget {
           Text(
             body,
             style:
-                TextStyle(color: Colors.white.withOpacity(.75), fontSize: 14),
+                TextStyle(color: Colors.black.withOpacity(.75), fontSize: 14),
           ),
           const SizedBox(height: 15),
           Container(

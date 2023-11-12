@@ -1,5 +1,7 @@
 // import 'package:bioallin/presentation/screens/home_screen.dart';
 import 'package:bioallin/firebase_options.dart';
+import 'package:bioallin/presentation/screens/home_screen.dart';
+import 'package:bioallin/presentation/screens_recolectorIn/historialRe_screen.dart';
 import 'package:bioallin/presentation/screens_recolectorIn/historialSo_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -25,11 +27,11 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           colorSchemeSeed: Colors.green,
           appBarTheme: const AppBarTheme(
-            backgroundColor: Color.fromARGB(255, 85, 212, 89),
-            titleTextStyle: TextStyle(color: Colors.white),
+            backgroundColor: Color.fromRGBO(30, 129, 15, 1.0),
+            titleTextStyle: TextStyle(color: Color.fromARGB(255, 249, 247, 247)),
           ),
         ),
-      //home: const HomeScreen());
-    home: const HistorialSoScreen());
+      home: const HomeScreen());
+    //home: HistorialReScreen());
   }
 }

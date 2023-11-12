@@ -12,7 +12,12 @@ class RequestCollect extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: const Text(
           "Solicitar Recolector",
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            decorationStyle: TextDecorationStyle.double,
+            fontFamily: AutofillHints.addressCity,
+          ),
         ),
         centerTitle: true,
       ),

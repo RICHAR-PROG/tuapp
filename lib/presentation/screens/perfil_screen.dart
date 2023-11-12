@@ -10,10 +10,16 @@ class PerfilScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: const Text("Perfil",style: TextStyle(
-          fontSize: 20
-        ),),
-        centerTitle: true ,
+        title: const Text(
+          "Perfil",
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            decorationStyle: TextDecorationStyle.double,
+            fontFamily: AutofillHints.addressCity,
+          ),
+        ),
+        centerTitle: true,
       ),
       // ignore: prefer_const_constructors
       body: UserProfile(),
