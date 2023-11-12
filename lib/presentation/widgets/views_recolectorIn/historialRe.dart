@@ -19,7 +19,7 @@ class HistorialResiduos extends StatelessWidget {
             child: ListadoRegistros(registros: [
               RegistroWidget(
                 registro: Registro(
-                  nombre: 'Juan Mendez',
+                  nombre: 'Richar Quispe Quincho',
                   ubicacion: 'Jr. Manuel Prado',
                   descripcion: 'Vidrio, papel',
                   cantidad: '5kg',

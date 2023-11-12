@@ -32,7 +32,7 @@ class InfoCard extends StatelessWidget {
   const InfoCard(
       {required this.title,
       this.body =
-          """Tiene una solicitud pendiente del señor(a) Juan Mendez 😊""",
+          """Tiene una solicitud pendiente del señor(a) Richar Quispe Quincho 😊""",
       required this.onMoreTap,
       this.subIcon = const CircleAvatar(
         backgroundColor: Colors.green,
