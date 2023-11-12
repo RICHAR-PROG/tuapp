@@ -1,5 +1,6 @@
 import 'package:bioallin/presentation/firebase_auth_implement/firebase_auth_services.dart';
 import 'package:bioallin/presentation/screens/home_screen.dart';
+import 'package:bioallin/presentation/screens_recolectorIn/historialSo_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:bioallin/presentation/screens/login_signup.dart';
@@ -220,11 +221,14 @@ Rellene sus datos''',
                         const SizedBox(height: 10),
                         ElevatedButton(
                           onPressed: () {
-                            // Acción para la opción "Recolector orgánico"
-                            // Navegar al panel del recolector orgánico
-                          },
+                            Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const  HistorialSoScreen()),
+                  );
+                             },
                           child: const Text(
-                            'Recolector Orgánico',
+                            'Recolector Inorgánico',
                           ),
                         ),
                         const SizedBox(height: 10),
@@ -234,7 +238,7 @@ Rellene sus datos''',
                             // Navegar al panel del recolector inorgánico
                           },
                           child: const Text(
-                            'Recolector Inorgánico',
+                            'Recolector Orgánico',
                           ),
                         ),
                       ],

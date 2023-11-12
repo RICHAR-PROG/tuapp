@@ -32,7 +32,7 @@ class InfoCard extends StatelessWidget {
   const InfoCard(
       {required this.title,
       this.body =
-          """Tiene una solicitud pendiente del señor(ra) Juan Mendez 😊""",
+          """Tiene una solicitud pendiente del señor(a) Richar Quispe Quincho 😊""",
       required this.onMoreTap,
       this.subIcon = const CircleAvatar(
         backgroundColor: Colors.green,
@@ -41,6 +41,7 @@ class InfoCard extends StatelessWidget {
           Icons.location_on,
           color: Colors.white,
         ),
+        
       ),
       this.subInfoText = "5 kilos",
       this.subInfoTitle = "El residuo es: vidrio, papel",
@@ -100,7 +101,7 @@ class InfoCard extends StatelessWidget {
                   onTap: onMoreTap,
                   child: const Center(
                       child: Text(
-                    "30/08/23",
+                    "15/11/23",
                     style: TextStyle(color: Colors.green),
                   )),
                 ),
@@ -156,6 +157,7 @@ class InfoCard extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
+                      
                     ],
                   )
                 ],

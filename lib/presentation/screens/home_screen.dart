@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Text(
-          "Welcome to Bioallin",
+          "Bienvenido a BioAllin",
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,

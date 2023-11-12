@@ -85,7 +85,6 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                     },
                     defaultColor: secondaryColor,
                     selectedColor: primaryColor),
-                
               ],
             ),
           ),

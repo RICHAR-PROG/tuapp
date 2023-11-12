@@ -34,7 +34,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
             left: 0,
             child: Container(
               height: 400,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage("assets/images/vegetacion.jpg"),
                       fit: BoxFit.fill)),
@@ -45,9 +45,9 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
             top: 150,
             child: Container(
               height: 520,
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               width: MediaQuery.of(context).size.width - 2,
-              margin: EdgeInsets.symmetric(horizontal: 2),
+              margin: const EdgeInsets.symmetric(horizontal: 2),
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(30),
@@ -63,7 +63,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                   children: [
                     Column(
                       children: [
-                        Text(
+                        const Text(
                           '''
 
 
@@ -76,7 +76,7 @@ INICIAR SESION''',
                               color: Colors.black),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 5),
+                          margin: const EdgeInsets.only(top: 5),
                           height: 2,
                           width: 130,
                           color: Colors.green,
@@ -86,11 +86,11 @@ INICIAR SESION''',
                   ],
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 25),
+                  margin: const EdgeInsets.only(top: 25),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         "EMAIL",
                         style: TextStyle(
                             fontSize: 12,
@@ -99,7 +99,7 @@ INICIAR SESION''',
                       ),
                       BuildTextField(
                           Icons.email_outlined, "Email", false, true, _emailController),
-                      Text(
+                      const Text(
                         "CONTRASEÑA",
                         style: TextStyle(
                             fontSize: 12,
@@ -112,7 +112,7 @@ INICIAR SESION''',
                           onPressed: () {
                             print("OK");
                           },
-                          child: Text("¿Olvide mi contraseña?",
+                          child: const Text("¿Olvide mi contraseña?",
                               style:
                                   TextStyle(fontSize: 15, color: Colors.black)))
                     ],
@@ -130,7 +130,7 @@ INICIAR SESION''',
                 child: Container(
                     height: 150,
                     width: 150,
-                    padding: EdgeInsets.all(1),
+                    padding: const EdgeInsets.all(1),
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(80),
@@ -139,21 +139,21 @@ INICIAR SESION''',
                               color: Colors.black.withOpacity(.3),
                               spreadRadius: 1,
                               blurRadius: 2,
-                              offset: Offset(0, 1))
+                              offset: const Offset(0, 1))
                         ]),
                     child: Container(
                       decoration: BoxDecoration(
-                          image: DecorationImage(
+                          image: const DecorationImage(
                               image: AssetImage("assets/images/bioallin.png"),
                               fit: BoxFit.fill),
                           borderRadius: BorderRadius.circular(120),
                           boxShadow: [
                             BoxShadow(
-                                color: Color.fromARGB(255, 0, 196, 7)
+                                color: const Color.fromARGB(255, 0, 196, 7)
                                     .withOpacity(.5),
                                 spreadRadius: 1,
                                 blurRadius: 2,
-                                offset: Offset(0, 1))
+                                offset: const Offset(0, 1))
                           ]),
                     )),
               )),
@@ -163,14 +163,14 @@ INICIAR SESION''',
             left: 0,
             child: Container(
               height: 90,
-              decoration: BoxDecoration(color: Colors.green),
+              decoration: const BoxDecoration(color: Colors.green),
               child: Container(
-                  padding: EdgeInsets.only(top: 15),
+                  padding: const EdgeInsets.only(top: 15),
                   child: Column(
                     children: [
                       TextButton(
                           onPressed: _signIn,
-                          child: Text(
+                          child: const Text(
                             "INICIAR SESION",
                             style: TextStyle(fontSize: 18, color: Colors.white),
                           ))
@@ -188,7 +188,7 @@ INICIAR SESION''',
               //   color: Colors.green
               // ),
               child: Container(
-                  padding: EdgeInsets.only(top: 10),
+                  padding: const EdgeInsets.only(top: 10),
                   color: Colors.white,
                   child: Column(
                     children: [
@@ -200,7 +200,7 @@ INICIAR SESION''',
                                   builder: (context) => SignupScreen()),
                             );
                           },
-                          child: Text(
+                          child: const Text(
                             "No tengo una cuenta",
                             style: TextStyle(fontSize: 16, color: Colors.black),
                           ))
@@ -226,17 +226,17 @@ INICIAR SESION''',
             icon,
             color: Colors.blueGrey,
           ),
-          enabledBorder: OutlineInputBorder(
+          enabledBorder: const OutlineInputBorder(
             borderSide: BorderSide(color: Colors.blueGrey),
             borderRadius: BorderRadius.all(Radius.circular(35.0)),
           ),
-          focusedBorder: OutlineInputBorder(
+          focusedBorder: const OutlineInputBorder(
             borderSide: BorderSide(color: Colors.blueGrey),
             borderRadius: BorderRadius.all(Radius.circular(35.0)),
           ),
-          contentPadding: EdgeInsets.all(10),
+          contentPadding: const EdgeInsets.all(10),
           hintText: hintText,
-          hintStyle: TextStyle(fontSize: 15, color: Colors.blueGrey),
+          hintStyle: const TextStyle(fontSize: 15, color: Colors.blueGrey),
         ),
       ),
     );
