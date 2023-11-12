@@ -1,5 +1,6 @@
 import 'package:bioallin/presentation/firebase_auth_implement/firebase_auth_services.dart';
 import 'package:bioallin/presentation/screens/home_screen.dart';
+import 'package:bioallin/presentation/screens/request_screen.dart';
 import 'package:bioallin/presentation/screens_recolectorIn/historialSo_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,8 @@ class _SignupScreenState extends State<SignupScreen> {
     _confirmPasswordController.dispose();
     super.dispose();
   }
- bool showOptions = false;
+
+  bool showOptions = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -189,11 +191,9 @@ Rellene sus datos''',
             top: 740,
             right: 10,
             left: 10,
-            
             child: Container(
               padding: const EdgeInsets.all(20),
-              decoration: const BoxDecoration(
-              ),
+              decoration: const BoxDecoration(),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -206,14 +206,19 @@ Rellene sus datos''',
                       },
                       child: const Text(
                         'REGISTRARSE COMO',
-                       
                       ),
                     ),
                   if (showOptions)
                     Column(
                       children: [
                         ElevatedButton(
-                          onPressed: _signUp,
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const RequestCollect()),
+                            );
+                          },
                           child: const Text(
                             'Usuario',
                           ),
@@ -222,11 +227,12 @@ Rellene sus datos''',
                         ElevatedButton(
                           onPressed: () {
                             Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const  HistorialSoScreen()),
-                  );
-                             },
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const HistorialSoScreen()),
+                            );
+                          },
                           child: const Text(
                             'Recolector Inorgánico',
                           ),
