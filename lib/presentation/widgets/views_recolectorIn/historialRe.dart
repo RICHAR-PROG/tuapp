@@ -6,6 +6,7 @@ class HistorialResiduos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -55,9 +56,15 @@ class ListadoRegistros extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return ListView.separated(
       padding: EdgeInsets.symmetric(horizontal: 16),
-      children: registros,
+      itemCount: registros.length,
+      itemBuilder: (context, index) {
+        return registros[index];
+      },
+      separatorBuilder: (context, index) {
+        return SizedBox(height: 15); // Especifica el espacio de separación vertical entre los cuadros
+      },
     );
   }
 }
@@ -70,16 +77,60 @@ class RegistroWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: ListTile(
-        leading: Icon(Icons.person),
-        title: Text(registro.nombre),
-        subtitle: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Ubicacion: ${registro.ubicacion}'),
-            Text('Descripcion: ${registro.descripcion}'),
-            Text('Cantidad: ${registro.cantidad}'),
+      elevation: 0, // Agrega color de sombra
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10), // Agrega borde redondeado
+      ),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.3),
+              spreadRadius: 0,
+              blurRadius: 10,
+              offset: Offset(0, 4), // Ajusta el desplazamiento de la sombra en el eje y
+            ),
           ],
+        ),
+        child: ListTile(
+          leading: Icon(Icons.person),
+          title: RichText(
+            text: TextSpan(
+              text: 'Nombre: ',
+              style: DefaultTextStyle.of(context).style, // Usa el estilo de texto predeterminado
+              children: <TextSpan>[
+                TextSpan(
+                  text: registro.nombre,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold, // Aplica negrita al nombre
+                  ),
+                ),
+              ],
+            ),
+          ),
+          subtitle: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              RichText(
+                text: TextSpan(
+                  text: 'Ubicación: ',
+                  style: DefaultTextStyle.of(context).style, // Usa el estilo de texto predeterminado
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: registro.ubicacion,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold, // Aplica negrita a la ubicación
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Text('Descripción: ${registro.descripcion}'),
+              Text('Cantidad: ${registro.cantidad}'),
+            ],
+          ),
         ),
       ),
     );
