@@ -1,6 +1,7 @@
 import 'package:bioallin/presentation/screens/history_screen.dart';
 import 'package:bioallin/presentation/screens/map_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 
 class SolicitarRecolector extends StatefulWidget {
   @override
@@ -86,6 +87,23 @@ class _RequestState extends State<SolicitarRecolector> {
     super.initState();
     wasteTypeController = TextEditingController();
     updateWasteTypeExamples();
+  }
+
+  Future<Position> determinePosition() async {
+    LocationPermission permission;
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        return Future.error('error');
+      }
+    }
+    return await Geolocator.getCurrentPosition();
+  }
+
+  void getCurrentLocation() async {
+    Position position = await determinePosition();
+    print(position.latitude);
   }
 
   @override
