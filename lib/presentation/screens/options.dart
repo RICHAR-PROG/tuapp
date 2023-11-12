@@ -21,10 +21,10 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
     Size size = MediaQuery.of(context).size;
     double height = 56;
 
-    const primaryColor = Color.fromARGB(255, 85, 212, 89);
-    const secondaryColor = Colors.black54;
+    const primaryColor = Color.fromRGBO(30, 129, 15, 1.0);
+    const secondaryColor = Colors.white;
     // const  accentColor = const Color(0xffffffff);
-    const backgroundColor = Colors.white;
+    const backgroundColor = Color.fromRGBO(30, 129, 15, 1.0);
 
     return BottomAppBar(
       color: Colors.transparent,
@@ -47,7 +47,7 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                         builder: (context) => const RequestCollect()),
                   );
                 },
-                child: const Icon(Icons.delete_forever_rounded)),
+                child: const Icon(Icons.fire_truck,color: Colors.white,)),
           ),
           SizedBox(
             height: height,
@@ -67,9 +67,7 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                     },
                     defaultColor: secondaryColor,
                     selectedColor: primaryColor),
-                
                 const SizedBox(width: 56),
-                
                 NavBarIcon(
                   text: "Perfil",
                   icon: Icons.person,
@@ -147,8 +145,8 @@ class NavBarIcon extends StatelessWidget {
       required this.icon,
       required this.selected,
       required this.onPressed,
-      this.selectedColor = const Color.fromARGB(255, 85, 212, 89),
-      this.defaultColor = Colors.black54})
+      this.selectedColor = const Color.fromARGB(255, 0, 0, 0),
+      this.defaultColor = const Color.fromARGB(255, 255, 255, 255)})
       : super(key: key);
   final String text;
   final IconData icon;
@@ -164,8 +162,8 @@ class NavBarIcon extends StatelessWidget {
       children: [
         IconButton(
           onPressed: onPressed,
-          splashColor: Colors.grey,
-          highlightColor: Colors.grey,
+          splashColor: Colors.black,
+          highlightColor: Colors.black,
           icon: Icon(
             icon,
             size: 25,
