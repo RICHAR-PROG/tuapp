@@ -19,11 +19,10 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
     Size size = MediaQuery.of(context).size;
     double height = 56;
 
-    const primaryColor = Color.fromARGB(255, 85, 174, 212);
-    const secondaryColor = Colors.black54;
+    const primaryColor = Color.fromRGBO(30, 129, 15, 1.0);
+    const secondaryColor = Colors.white;
     // const  accentColor = const Color(0xffffffff);
-    const backgroundColor = Colors.white;
-
+    const backgroundColor = Color.fromRGBO(30, 129, 15, 1.0);
     return BottomAppBar(
       color: Colors.transparent,
       elevation: 0,
@@ -45,7 +44,7 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                         builder: (context) => const HistorialSoScreen()),
                   );
                 },
-                child: const Icon(Icons.delete_forever_rounded)),
+                child: const Icon(Icons.notification_add,color: Colors.white,)),
           ),
           SizedBox(
             height: height,

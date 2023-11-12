@@ -1,4 +1,4 @@
-
+import 'package:bioallin/presentation/screens/history_screen.dart';
 import 'package:bioallin/presentation/screens/map_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -48,7 +48,11 @@ class _RequestState extends State<SolicitarRecolector> {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const HistoryScreen()),
+                );
               },
               child: const Text('Aceptar'),
             ),
@@ -87,10 +91,9 @@ class _RequestState extends State<SolicitarRecolector> {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      elevation: 13,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Container(
-       // width: MediaQuery.of(context).size.width / 1.5,
+        // width: MediaQuery.of(context).size.width / 1.5,
         height: 450,
         decoration: BoxDecoration(
           border: Border.all(
@@ -98,7 +101,7 @@ class _RequestState extends State<SolicitarRecolector> {
           ),
           boxShadow: const [
             BoxShadow(
-              color: Color.fromARGB(255, 255, 255, 255),
+              color: Color.fromARGB(255, 252, 253, 247),
               spreadRadius: 0,
               blurRadius: 0,
               offset: Offset(0, 0),
@@ -114,9 +117,17 @@ class _RequestState extends State<SolicitarRecolector> {
                 const Icon(Icons.location_on,
                     color: Color.fromARGB(255, 231, 50, 18)),
                 const Text('Ubicación'),
-                TextButton(
+                ElevatedButton(
                   onPressed: verUbicacion,
+                  // ignore: sort_child_properties_last
                   child: const Text('Enviar ubicación'),
+                  style: ButtonStyle(
+                    elevation: MaterialStateProperty.all(3),
+                    backgroundColor: MaterialStateProperty.all(
+                        const Color.fromRGBO(29, 125, 15, 1)),
+                    foregroundColor: MaterialStateProperty.all(
+                        const Color.fromARGB(255, 243, 239, 239)),
+                  ),
                 ),
               ],
             ),
@@ -212,18 +223,33 @@ class _RequestState extends State<SolicitarRecolector> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                
                 ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
+                  // ignore: sort_child_properties_last
                   child: const Text('Cancelar'),
+                  style: ButtonStyle(
+                    elevation: MaterialStateProperty.all(3),
+                    backgroundColor: MaterialStateProperty.all(
+                        const Color.fromARGB(255, 243, 239, 239)),
+                    foregroundColor: MaterialStateProperty.all(
+                        const Color.fromRGBO(29, 125, 15, 1)),
+                  ),
                 ),
                 ElevatedButton(
                   onPressed: () {
                     guardarDatos();
                   },
+                  // ignore: sort_child_properties_last
                   child: const Text('Solicitar'),
+                  style: ButtonStyle(
+                    elevation: MaterialStateProperty.all(3),
+                    backgroundColor: MaterialStateProperty.all(
+                        const Color.fromARGB(255, 243, 239, 239)),
+                    foregroundColor: MaterialStateProperty.all(
+                        const Color.fromRGBO(29, 125, 15, 1)),
+                  ),
                 ),
               ],
             ),
@@ -233,5 +259,3 @@ class _RequestState extends State<SolicitarRecolector> {
     );
   }
 }
-
-
