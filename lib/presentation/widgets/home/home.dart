@@ -9,10 +9,10 @@ class Home extends StatelessWidget {
       child: Column(
         children: [
           
-          IllustrationFb1(),
-          IllustrationFb4(),
-          IllustrationFb2(),
-          IllustrationFb3(),
+           IllustrationFb1(),
+          // IllustrationFb4(),
+          // IllustrationFb2(),
+          // IllustrationFb3(),
         ],
       ),
     );
@@ -76,7 +76,7 @@ class IllustrationFb1 extends StatelessWidget {
       padding: const EdgeInsets.all(10.0),
       child: Stack(
         children: [
-          Image.asset('assets/images/INORGANICO1.png'),
+          Image.asset('assets/images/1.png'),
         ],
       ),
     );
